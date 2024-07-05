@@ -9,18 +9,15 @@
 <style>
 
     .container {
-        display: flex; 
-        justify-content: center;
-        align-items: center; 
-        margin-top: 10rem; 
-   
+        margin: 10vh 10vw 1vh 10vw;  
     }
+   
 </style>
 
 </style>
 <body>
   <div class="container">
-    <div id="paypal-button-container" ></div>
+    <div id="paypal-button-container"></div>
     </div>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
