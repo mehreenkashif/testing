@@ -23,6 +23,10 @@
     const urlParams = new URLSearchParams(window.location.search);
     const amount = urlParams.get('amount') || '10.00'; // Default amount or fetch from URL
 
+    console.log('amount from paypal native',amount);
+ 
+
+ 
     paypal.Buttons({
       createOrder: function(data, actions) {
         return actions.order.create({
@@ -34,15 +38,20 @@
         });
       },
       onApprove: function(data, actions) {
+        console.log(data,'in approve console');
         return actions.order.capture().then(function(details) {
-          window.location.href = `${APP_URL}/success`; 
+          // window.location.href = 'http://192.168.1.48:8000/success; 
+          window.location.href = 'https://dashboard.bestassignmentwriters.co.uk/success';
+
         });
       },
       onCancel: function(data) {
-        window.location.href = `${APP_URL}/cancel`; 
+       console.log('data in cancel function',data);
+        window.location.href = 'https://dashboard.bestassignmentwriters.co.uk/cancel'; 
       }
     }).render('#paypal-button-container');
   </script>
   
 </body>
 </html>
+  

@@ -18,6 +18,13 @@ Route::get('/paypal-payment', function () {
     return view('paypalTesting');
 });
 
+Route::get('/success', function () {
+    return 'success';
+});
+Route::get('/cancel', function () {
+    return 'cancel';
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,3 +38,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+  // source={{ uri: `http://192.168.1.48:8000/paypal-payment?amount=${amount}` }}
+//   <Text>{`Loading: http://192.168.1.48:8000/paypal-payment?amount=${amount}`}</Text>
