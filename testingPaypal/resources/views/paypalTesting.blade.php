@@ -6,10 +6,22 @@
 <head>
   <script src="https://www.paypal.com/sdk/js?client-id=ATFcfGtAaKU5MsB6ri6ih-THk-IZ1rRnVlSNbWXgznvOLH5JtO0g0qrMH7cG2tYIzyKVvAfVwzFLRDbY"></script>
 </head>
+<style>
+
+    .container {
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        margin-top: 10rem; 
+   
+    }
+</style>
+
+</style>
 <body>
   <div class="container">
-    <div id="paypal-button-container"></div>
-  </div>
+    <div id="paypal-button-container" ></div>
+    </div>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const amount = urlParams.get('amount') || '10.00'; // Default amount or fetch from URL
@@ -34,5 +46,6 @@
       }
     }).render('#paypal-button-container');
   </script>
+  
 </body>
 </html>
